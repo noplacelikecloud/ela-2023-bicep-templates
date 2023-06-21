@@ -7,12 +7,7 @@ This Bicep module is used to deploy a virtual network (VNet) in Azure. It create
 - Bicep CLI installed
 
 ## Deployment Steps
-1. Install the Bicep CLI if not already installed.
-2. Run the following command to deploy the Bicep file:
-   ```
-   bicep build main.bicep
-   ```
-3. Once the Bicep file is successfully built, deploy the resources using the Azure CLI or Azure PowerShell.
+This is an Azure Bicep module, which is created for use in higher level deployments.
 
 ## Parameters
 - `name` (string): The name of the virtual network.
