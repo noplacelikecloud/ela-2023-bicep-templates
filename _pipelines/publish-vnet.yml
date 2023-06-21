@@ -28,6 +28,6 @@ steps:
     publishDirectory: '$(Build.ArtifactStagingDirectory)'
     feedsToUsePublish: 'internal'
     vstsFeedPublish: '8a164210-c64e-459d-a85d-9ff86e22d648/0b56d169-f106-4a60-92bb-1a720c1cb848'
-    vstsFeedPackagePublish: 'VNET'
+    vstsFeedPackagePublish: 'vnet'
     versionOption: 'patch'
   
