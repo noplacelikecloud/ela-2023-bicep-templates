@@ -1,0 +1,28 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  - main
+  
+pool:
+  vmImage: ubuntu-latest
+  
+steps:
+- task: CopyFiles@2
+  displayName: Copy to Artifact Staging Dir
+  inputs:
+    SourceFolder: '$(Build.SourcesDirectory)/VNET'
+    Contents: '**'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+- task: UniversalPackages@0
+  displayName: Publish Package
+  inputs:
+    command: 'publish'
+    publishDirectory: '$(Build.ArtifactStagingDirectory)'
+    feedsToUsePublish: 'internal'
+    vstsFeedPublish: '676a50b0-4652-4134-9ec6-7fc2f4de7cb4'
+    vstsFeedPackagePublish: 'VNET'
+    versionOption: 'patch'
+  
